@@ -1,0 +1,26 @@
+config ZSLICE
+	bool "zslice support"
+	depends on COBS
+	depends on NANOPB
+	default n
+	help
+	  This option enables zslice.
+
+if ZSLICE
+
+config ZSLICE_CRC
+	bool "Enables CRC error detection"
+	depends on CRC
+	default n
+	help
+	  This option enables the use of CRC for zslice packets.
+	  Does not enable for all transports.
+
+config ZSLICE_ACKS
+	bool "Enables acknowledgements for packets"
+	default n
+	help
+	  This option enables the use of acknowledgements for zslice packets.
+	  Does not enable for all transports.
+
+endif

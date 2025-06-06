@@ -1,0 +1,8 @@
+name: zslice
+tests:
+  - tests
+build:
+  cmake: .
+  kconfig: Kconfig.zslice
+  depends:
+    - nanopb
