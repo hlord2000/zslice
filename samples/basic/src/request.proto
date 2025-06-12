@@ -1,0 +1,19 @@
+// A very simple protocol definition, consisting of only
+// one message.
+
+syntax = "proto3";
+
+enum RequestTypes {
+  ADD = 0;
+  SUBTRACT = 1;
+  MULTIPLY = 2;
+  DIVIDE = 3;
+  SQRT = 4;
+  EXPONENT = 5;
+}
+
+message Request {
+    int32 operand_1 = 1;
+    int32 operand_2 = 2;
+    RequestTypes request_type = 3;
+}
