@@ -1,7 +1,8 @@
 config ZSLICE
 	bool "zslice support"
-	depends on COBS
-	depends on NANOPB
+	select COBS
+	select NANOPB
+	select NET_BUF
 	default n
 	help
 	  This option enables zslice.
